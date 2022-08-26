@@ -1,24 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,600&display=swap');
 
-*{
+* {
     font-family: 'poppins';
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-li{
+
+li {
     list-style-type: none;
     color: #fff;
     font-size: 1.3em;
     font-weight: 500;
-    
+
 }
-body{
+
+body {
     background: url(/assets/retro-living-room-interior-design.jpg) no-repeat center center/cover;
 }
 
+/* navbar */
+.hamburger {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
 
-.navbar .container{
+.bar {
+    position: relative;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+}
+
+.bar::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+}
+
+.bar::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+}
+
+.navbar .container {
     position: relative;
     max-width: 1500px;
     margin: 0 auto;
@@ -27,65 +61,75 @@ body{
     align-items: center;
     flex-basis: 10%;
     width: 100%;
-    height: 8rem;
+    height: 20vh;
+    padding: 0 2rem;
 }
-.logo{
+
+.logo {
     position: absolute;
     font-size: 1.5rem;
     top: 3rem;
     color: #fff;
 }
- .menu-contact{
-    position:absolute;
+
+.menu-contact {
+    position: absolute;
     right: 0;
-    padding: 2rem 0 ;
+    padding: 2rem 0;
     display: flex;
     width: 80%;
     align-items: center;
     justify-content: space-around;
     border-bottom: 3px #fff solid;
- }
- .menu ul{
+}
+
+.menu ul {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 3rem;
- }
+}
 
-.contact{
+.contact {
     display: flex;
     align-items: center;
     gap: 1.5rem;
 }
 
-.contact-icon i{
+.contact-icon i {
     color: #fff;
 }
-.contact-info{
+
+.contact-info {
     color: #fff;
     font-weight: 500;
-} 
+}
 
-.hero .container{
+.hero .container {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 50rem;
-    /* margin-bottom: 5rem; */
+    height: 80vh;
+    padding: 1rem;
+
 
 }
-.left-side{
+
+.left-side {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 8rem;
+    flex-basis: 50%;
 }
-.left-side h1{
+
+.left-side h1 {
     color: #fff;
     font-size: 4rem;
     width: 700px;
 }
-button{
+
+button {
     border: 2px #fff solid;
     padding: 1rem 4rem;
     border-radius: 50px;
@@ -97,11 +141,12 @@ button{
 
 }
 
-.right-side{
+.right-side {
     position: relative;
+    flex-basis: 50%;
 }
 
-.card{
+.card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -112,16 +157,8 @@ button{
     padding: 2rem 2rem;
     background-color: rgba(184, 184, 184, 0.3);
 }
-.puzzle{
-    position: absolute;
-    top: -200px;
-}
-.idea{
-    position: relative;
-    bottom: -250px;
-    right: 200px;
-}
-.inner-card{
+
+.inner-card {
     background-color: #fff;
     width: 100px;
     border-radius: 25px;
@@ -129,43 +166,160 @@ button{
     text-align: center;
 
 }
-.card h2{
+
+.card h2 {
     color: #fff;
     font-size: 1rem;
 }
-.line-1{
-    right: 363px;
-    bottom: 189px;
+
+.puzzle {
     position: absolute;
+    top: -200px;
+    right: 150px;
+}
+
+.line-1 {
+    position: absolute;
+    bottom: -50px;
+    right: 63px;
+    transform: rotate(90deg);
     width: 100px;
     height: 2px;
     background-color: #fff;
 }
-.dot-1{
-    right: 350px;
-    bottom: 180px;
+
+.dot-1 {
+    bottom: -100px;
+    right: 100px;
     position: absolute;
     width: 25px;
     height: 25px;
     background-color: #fff;
     border-radius: 50%;
 }
-.line-2{
+
+.idea {
+    position: relative;
+    bottom: -100px;
+
+}
+
+.line-2 {
     position: absolute;
-    top: 40%;
-    right: 300px;
     width: 2px;
     height: 100px;
     background-color: #fff;
+    transform: rotate(90deg);
+    right: -50px;
 }
-.dot-2{
+
+.dot-2 {
     position: absolute;
-    top: 50%;
-    right: 288px;
     width: 25px;
     height: 25px;
     background-color: #fff;
     border-radius: 50%;
+    right: -100px;
+}
+
+/* md Screen */
+
+@media screen and (max-width:768px) {
+
+    .menu-contact,
+    .contact {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        top: 80px;
+        right: 50px;
+    }
+
+    .container {
+        padding: 1.5rem;
+    }
+
+    .hero .container {
+        flex-direction: column;
+        height: 1200px;
+    }
+
+    .left-side {
+        padding: 1.5rem;
+        align-items: flex-start;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .left-side h1 {
+        font-size: 2rem;
+        width: 250px;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 0.5rem 2rem;
+
+    }
+
+    .puzzle {
+        right: 50%;
+        top: 0%;
+        transform: translate(50%, 0%);
+    }
+
+    .idea {
+        top: 400px;
+    }
+}
+
+/* sm Screen */
+
+@media screen and (max-width:1024px) {
+
+    .menu-contact,
+    .contact {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        top: 80px;
+        right: 50px;
+    }
+
+    .container {
+        padding: 1.5rem;
+    }
+
+    .hero .container {
+        gap: 2rem;
+        
+    }
+
+    .left-side {
+        padding: 1.5rem;
+        align-items: flex-start;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .left-side h1 {
+        font-size: 4rem;
+        width: 400px;
+    }
+    
+    .idea{
+        right: 50px;
+    }
+    button {
+        font-size: 1rem;
+        padding: 1rem 2rem;
+
+    }
+
 }
 
 
@@ -179,24 +333,4 @@ button{
 
 
 
-/* .logo{<i class="fa-soli
-    max-width: 1200px;
-    margin: 0 auto;
-    color: #fff;
-}
-.container ul{
-    display: flex;
-    gap: 3rem;
-}
-.contact{
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-.contact-icon i{
-    color: #fff;
-}
-.contact-info{
-    color: #fff;
-    font-weight: 500;
-} */
+
